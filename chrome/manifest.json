@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "corGiPT",
+  "version": "1.0.0",
+  "description": "corGiPT",
+  "icons": {
+      "16": "/images/corgi-with-shades16.png",
+      "48": "/images/corgi-with-shades48.png",
+      "128": "/images/corgi-with-shades128.png"
+  },
+  "permissions": [
+      "activeTab",
+      "tabs",
+      "storage"
+  ],
+  "host_permissions": [
+      "<all_urls>"
+  ],
+  "web_accessible_resources": [
+      {
+          "resources": [
+              "images/*"
+          ],
+          "matches": [
+              "<all_urls>"
+          ]
+      }
+  ],
+  "content_scripts": [
+      {
+          "matches": [
+              "<all_urls>"
+          ],
+          "js": [
+              "content.js"
+          ],
+          "css": [
+              "content.css"
+          ],
+          "run_at": "document_end"
+      }
+  ],
+  "action": {
+    "default_icon": "/images/corgi-with-shades19.png",
+    "default_title": "corGiPT",
+    "default_popup": "popup.html"
+  }
+}
